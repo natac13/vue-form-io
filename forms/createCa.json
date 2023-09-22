@@ -1,0 +1,314 @@
+{
+  "title": "SHQ PoC",
+  "version": "2.0.0",
+  "description": "SafetyHQ Proof of Concept",
+  "name": "jbfefjgnnwlszyx",
+  "roles": {
+    "administrator": {
+      "title": "Administrator",
+      "description": "A role for Administrative Users.",
+      "admin": true,
+      "default": false
+    },
+    "authenticated": {
+      "title": "Authenticated",
+      "description": "A role for Authenticated Users.",
+      "admin": false,
+      "default": false
+    },
+    "anonymous": {
+      "title": "Anonymous",
+      "description": "A role for Anonymous Users.",
+      "admin": false,
+      "default": true
+    }
+  },
+  "forms": {
+    "createCa": {
+      "title": "Create CA",
+      "type": "form",
+      "name": "createCa",
+      "path": "createca",
+      "display": "form",
+      "tags": [],
+      "settings": {},
+      "components": [
+        {
+          "label": "Project",
+          "widget": "choicesjs",
+          "tableView": true,
+          "data": {
+            "values": [
+              {
+                "label": "Jiffy Lube",
+                "value": "jiffyLube"
+              },
+              {
+                "label": "No Frills",
+                "value": "noFrills"
+              }
+            ]
+          },
+          "key": "project",
+          "type": "select",
+          "input": true
+        },
+        {
+          "label": "Project Location",
+          "columns": [
+            {
+              "components": [
+                {
+                  "label": "Company",
+                  "widget": "choicesjs",
+                  "tableView": true,
+                  "data": {
+                    "values": [
+                      {
+                        "label": "A",
+                        "value": "a"
+                      },
+                      {
+                        "label": "B",
+                        "value": "b"
+                      },
+                      {
+                        "label": "C",
+                        "value": "c"
+                      }
+                    ]
+                  },
+                  "key": "company",
+                  "type": "select",
+                  "input": true
+                }
+              ],
+              "width": 6,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md",
+              "currentWidth": 6
+            },
+            {
+              "components": [
+                {
+                  "label": "Division",
+                  "widget": "choicesjs",
+                  "tableView": true,
+                  "data": {
+                    "values": [
+                      {
+                        "label": "1",
+                        "value": "1"
+                      },
+                      {
+                        "label": "2",
+                        "value": "2"
+                      },
+                      {
+                        "label": "3",
+                        "value": "3"
+                      }
+                    ]
+                  },
+                  "key": "division",
+                  "type": "select",
+                  "input": true
+                }
+              ],
+              "width": 6,
+              "offset": 0,
+              "push": 0,
+              "pull": 0,
+              "size": "md",
+              "currentWidth": 6
+            }
+          ],
+          "key": "projectLocation",
+          "type": "columns",
+          "input": false,
+          "tableView": false
+        },
+        {
+          "label": "Deficiency",
+          "applyMaskOn": "change",
+          "autoExpand": false,
+          "tableView": true,
+          "validate": {
+            "required": true
+          },
+          "key": "deficiency",
+          "type": "textarea",
+          "input": true
+        },
+        {
+          "label": "Photos",
+          "tableView": false,
+          "storage": "base64",
+          "webcam": false,
+          "fileTypes": [
+            {
+              "label": "",
+              "value": ""
+            }
+          ],
+          "filePattern": "image/*",
+          "key": "photos",
+          "type": "file",
+          "input": true
+        },
+        {
+          "label": "Signature",
+          "tableView": false,
+          "provider": {
+            "name": "default",
+            "tagtype": 1
+          },
+          "validate": {
+            "required": true
+          },
+          "key": "premiumsignature",
+          "type": "signature",
+          "input": true
+        },
+        {
+          "type": "button",
+          "label": "Submit",
+          "key": "submit",
+          "disableOnInvalid": true,
+          "input": true,
+          "tableView": false
+        }
+      ],
+      "access": [
+        {
+          "type": "create_own",
+          "roles": []
+        },
+        {
+          "type": "create_all",
+          "roles": []
+        },
+        {
+          "type": "read_own",
+          "roles": []
+        },
+        {
+          "type": "read_all",
+          "roles": [
+            "administrator",
+            "authenticated",
+            "anonymous"
+          ]
+        },
+        {
+          "type": "update_own",
+          "roles": []
+        },
+        {
+          "type": "update_all",
+          "roles": []
+        },
+        {
+          "type": "delete_own",
+          "roles": []
+        },
+        {
+          "type": "delete_all",
+          "roles": []
+        },
+        {
+          "type": "team_read",
+          "roles": []
+        },
+        {
+          "type": "team_write",
+          "roles": []
+        },
+        {
+          "type": "team_admin",
+          "roles": []
+        }
+      ],
+      "submissionAccess": [
+        {
+          "type": "create_own",
+          "roles": []
+        },
+        {
+          "type": "create_all",
+          "roles": []
+        },
+        {
+          "type": "read_own",
+          "roles": []
+        },
+        {
+          "type": "read_all",
+          "roles": []
+        },
+        {
+          "type": "update_own",
+          "roles": []
+        },
+        {
+          "type": "update_all",
+          "roles": []
+        },
+        {
+          "type": "delete_own",
+          "roles": []
+        },
+        {
+          "type": "delete_all",
+          "roles": []
+        },
+        {
+          "type": "team_read",
+          "roles": []
+        },
+        {
+          "type": "team_write",
+          "roles": []
+        },
+        {
+          "type": "team_admin",
+          "roles": []
+        }
+      ],
+      "properties": {},
+      "controller": "",
+      "submissionRevisions": ""
+    }
+  },
+  "actions": {},
+  "resources": {},
+  "revisions": {},
+  "access": [
+    {
+      "type": "create_all",
+      "roles": [
+        "administrator"
+      ]
+    },
+    {
+      "type": "read_all",
+      "roles": [
+        "administrator"
+      ]
+    },
+    {
+      "type": "update_all",
+      "roles": [
+        "administrator"
+      ]
+    },
+    {
+      "type": "delete_all",
+      "roles": [
+        "administrator"
+      ]
+    }
+  ]
+}
