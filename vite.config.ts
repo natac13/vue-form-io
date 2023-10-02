@@ -5,6 +5,15 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  esbuild: {
+    target: 'system',
+    
+  },
+  build: {
+    rollupOptions: {
+      p
+    }
+  }
   plugins: [vue()],
   resolve: {
     alias: {
